@@ -105,12 +105,12 @@ class _HomePageState extends State<HomePage>
               ),
             ],
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 50.0,
             width: double.infinity,
             child: TabBarView(
               controller: _tabsController,
-              children: [
+              children: const [
                 CookiePage(),
                 CookiePage(),
                 CookiePage(),
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage>
         child:  const Icon(Icons.fastfood,),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

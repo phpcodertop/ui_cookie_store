@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_cookie_store/cookie_details.dart';
 
 class CookiePage extends StatelessWidget {
   const CookiePage({Key? key}) : super(key: key);
@@ -67,7 +68,15 @@ class CookiePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (ctx) => CookieDetails(
+              cookieName: cookieName,
+              price: price,
+              imgPath: imgPath,
+            ),
+          ));
+        },
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
@@ -163,7 +172,6 @@ class CookiePage extends StatelessWidget {
                         ),
                       ),
                     ],
-
                     if (added) ...[
                       const Icon(
                         Icons.remove_circle_outline,
